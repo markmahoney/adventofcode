@@ -39,7 +39,7 @@ let is_safe_decreasing level_pairs = List.fold_left (is_safe_in_direction decrea
 let is_safe level_pairs = is_safe_increasing level_pairs || is_safe_decreasing level_pairs
 
 let safe_count = List.map is_safe all_level_pairs
-                 |> List.filter (fun a -> a)
+                 |> List.filter Fun.id
                  |> List.length
                                                     
 (* print the answer *)
