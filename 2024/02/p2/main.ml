@@ -47,8 +47,6 @@ let is_safe_decreasing levels =
 
 let is_safe levels = (is_safe_increasing levels) || (is_safe_decreasing levels)
 
-let () = List.iteri (fun i x -> Printf.printf "%d. %b\n" (i + 1) x) (List.map is_safe all_levels)
-    
 let safe_count = List.map is_safe all_levels
                  |> List.filter Fun.id
                  |> List.length
